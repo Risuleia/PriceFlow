@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="popup.css">
+    </head>
+    <body>
+        <div id="main">
+            <h2 id="heading" select="false">PriceFlow</h2>
+            <div class="form-container">
+                <label for="currency" class="form-label" select="false">Preferred Currency:</label>
+                <input type="text" name="currency" id="currency" maxlength="3" class="form-field" placeholder="USD">
+                <div class="btns-container" select="false">
+                    <button id="save-btn" class="btn">
+                        <span class="btn-text">Apply</span>
+                    </button>
+                    <button id="default-btn" class="btn">
+                        <span class="btn-text">Save as Default</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="dist/popup.js" type="module"></script>
+    </body>
+</html>

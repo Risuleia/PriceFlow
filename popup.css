@@ -1,0 +1,192 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* base */
+:root {
+    --bg-clr-1: #33303ff7;
+    --bg-clr-2: #41414198;
+    --txt-clr-1: #f0f0f0;
+    --txt-clr-2: #2a2a2a98;
+    --txt-clr-3: #3e3950e7;
+    --accent-clr-1: #e9c1aa;
+    --accent-clr-2: #d7cfe28e;
+    --accent-clr-3: #8561b9c5;
+    --accent-clr-4: #ffffff9b;
+    --btn-clr-1: #f0cc9d;
+    --btn-clr-2: #f4baba;
+    --txt-1: Comfortaa;
+    --txt-2: Montserrat;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: var(--bg-clr-1);
+    font-family: var(--txt-1), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    width: max-content;
+}
+::placeholder {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+[select="false"], [select="false"] * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    background: var(--bg-clr-1);
+}
+
+#heading {
+    font-size: 10vmax;
+    color: var(--txt-clr-1);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #fefdfd77;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.form-container .form-label {
+    width: 100%;
+    text-align: left;
+    color: var(--txt-clr-2);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-left: 10px;
+}
+.form-container .form-field {
+    width: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    border-radius: 50px;
+    border: 3px solid var(--accent-clr-2);
+    height: 40px;
+    padding: 5px;
+    background: none;
+    color: var(--accent-clr-4);
+    font-size: 1rem;
+    text-indent: 5px;
+    font-weight: 700;
+    font-family: var(--txt-2), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    transition: border-color 300ms ease;
+    animation: enter 1s linear forwards;
+    animation-delay: 500ms;
+    transform-origin: left;
+}
+
+.form-container .form-field:hover,
+.form-container .form-field:active,
+.form-container .form-field:focus {
+    border-color: var(--accent-clr-1);
+    transition: border-color 300ms ease;
+}
+
+.form-container .form-field:hover::placeholder,
+.form-container .form-field:active::placeholder,
+.form-container .form-field:focus::placeholder {
+    filter: brightness(2);
+    transition: filter 250ms linear;
+}
+.form-container .form-field::placeholder {
+    color: var(--accent-clr-4);
+    filter: brightness(.8);
+    transition: filter 250ms linear;
+}
+
+.btns-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: 0;
+    border: 3px solid var(--btn-clr);
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--btn-clr);
+    transition: all 250ms linear;
+}
+.btn span {
+    padding: 8px 20px;
+    color: inherit;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn:hover, .btn:active, .btn:focus, .btn:focus-visible, .btn:focus-within {
+    background: linear-gradient(-.65turn, var(--btn-clr), var(--accent-clr-3));
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    color: var(--txt-clr-2) !important;
+    animation: radiance 1.5s linear infinite alternate;
+    transition: all 300ms linear;
+}
+
+#save-btn {
+    --btn-clr: var(--btn-clr-1)
+}
+#default-btn {
+    --btn-clr: var(--btn-clr-2)
+}
+
+
+/* animations */
+@keyframes radiance {
+    to {
+        background-position: 80%;
+    }
+}
+
+@keyframes enter {
+    to {
+        width: 100%;
+    }
+}
